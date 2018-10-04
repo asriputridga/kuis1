@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <h2>{{form}}</h2><hr>
+            <label class = "form-label" >Nama</label>
+            <input type="text" class="form-control" [(ngModel)] = "nama">
+            <label class = "form-label">NIM</label>
+            <input type="text" class="form-control" [(ngModel)] = "nim">
+            <label class = "form-label">Kelas</label>
+            <input type="text" class="form-control" [(ngModel)] = "kelas">
+            <br>
+            <button class="btn btn-block btn-primary" (click)="tambahMahasiswa()">TAMBAH</button>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <h2>{{data}}</h2><hr>
+            <div class="card" *ngFor="let mahasiswa of daftarMahasiswa">
+                <div class="card-header">
+                    <h5>{{ mahasiswa.nim }}</h5>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ mahasiswa.nama }}</h2>
+                    <h4 class="card-text">{{ mahasiswa.kelas }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
